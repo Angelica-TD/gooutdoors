@@ -162,10 +162,13 @@ C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\staticwe
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\Outdoors.8FF4D3DA.Up2Date
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\Outdoors.ly.dll
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\refint\Outdoors.ly.dll
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\Outdoors.ly.pdb
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\Outdoors.ly.genruntimeconfig.cache
 C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\ref\Outdoors.ly.dll
+C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\bin\Debug\net8.0\Npgsql.dll
+C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\Outdoors.ly.sourcelink.json
+C:\Users\angel\OneDrive\Documents\Projects\Outdoors.ly\obj\Debug\net8.0\swae.build.ex.cache
