@@ -1,0 +1,35 @@
+﻿@model List<Supply>
+
+<div class="container-sm">
+
+	<div class="d-flex justify-content-between align-items-center">
+		<h1>
+			Supplies list
+		</h1>
+
+		<a asp-controller="Supply" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-square"></i> Add new</a>
+	</div>
+
+
+	<div class="list-group gap-3">
+		@foreach (var obj in Model)
+		{
+			<a href="supply/details/@obj.Id" class="list-group-item list-group-item-action d-flex gap-3 py-3 border border-primary">
+				<div class="d-flex gap-2 w-100 justify-content-between align-items-start">
+					<div>
+						<h6 class="mb-0">
+							@obj.ItemName
+						</h6>
+						<p>
+							Quantity: @obj.Quantity
+						</p>
+						<p class="mb-0 opacity-75">
+							With: @obj.User?.Name
+						</p>
+					</div>
+				</div>
+			</a>
+		}
+
+	</div>
+</div>

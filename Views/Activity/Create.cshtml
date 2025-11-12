@@ -1,0 +1,85 @@
+﻿@model ActivityCreateViewModel
+
+<h1>
+	Create a new activity
+</h1>
+
+<form asp-controller="Activity" asp-action="Create" method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Venue" class="form-label"></label>
+        <input asp-for="Venue" class="form-control" />
+        <span asp-validation-for="Venue" class="text-danger"></span>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label asp-for="StartDate" class="form-label"></label>
+            <input asp-for="StartDate" class="form-control" type="date" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label asp-for="StartTime" class="form-label"></label>
+            <input asp-for="StartTime" class="form-control" type="time" />
+            <span asp-validation-for="StartTime" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Details" class="form-label"></label>
+        <textarea asp-for="Details" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Details" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SelectedSupplyIds" class="form-label">Needed Supplies</label>
+        <input id="suppliesInput" name="SelectedSupplyNames" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SelectedUserIds" class="form-label"></label>
+        <select asp-for="SelectedUserIds" asp-items="Model.Users" class="form-select" multiple></select>
+
+         @* <label asp-for="SelectedUserIds" class="form-label">Invitees</label>
+        <input id="inviteesInput" name="SelectedUserNames" class="form-control" /> *@
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Activity</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts{
+<script>
+    // Supplies tag input
+    var suppliesInput = document.querySelector('#suppliesInput');
+    var suppliesTagify = new Tagify(suppliesInput, {
+        whitelist: @Html.Raw(Json.Serialize(Model.Supplies.Select(s => s.Text))),
+        enforceWhitelist: false,
+        dropdown: {
+            enabled: 1,
+            maxItems: 20,
+            classname: 'supplies-dropdown',
+            fuzzySearch: true
+        }
+    });
+
+    // Invitees tag input
+    var inviteesInput = document.querySelector('#inviteesInput');
+    var inviteesTagify = new Tagify(inviteesInput, {
+        whitelist: @Html.Raw(Json.Serialize(Model.Users.Select(u => u.Text))),
+        enforceWhitelist: false,
+        dropdown: {
+            enabled: 1,
+            maxItems: 20,
+            classname: 'invitees-dropdown',
+            fuzzySearch: true
+        }
+    });
+</script>
+}
+

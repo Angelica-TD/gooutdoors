@@ -1,0 +1,77 @@
+﻿@model ActivityViewModel
+
+<div class="d-flex justify-content-between align-items-center">
+	<h1>
+		Activities list
+	</h1>
+
+<a asp-controller="Activity" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-square"></i> Add new</a>
+</div>
+
+<div class="accordion" id="activitiesAccordion">
+    @if (Model.ActivitiesToday.Any())
+    {
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Today's Activities
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#activitiesAccordion">
+            <div class="accordion-body">
+                @await Html.PartialAsync("_ActivityList", Model.ActivitiesToday,
+                new ViewDataDictionary(ViewData)
+                                {
+                                { "ShowTime", true},
+                                { "BadgeColor", "success" }
+                                })
+            </div>
+        </div>
+    </div>
+    }
+
+    @if (Model.UpcomingActivities.Any())
+    {
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                Upcoming Activities
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#activitiesAccordion">
+            <div class="accordion-body">
+                @await Html.PartialAsync("_ActivityList", Model.UpcomingActivities,
+                new ViewDataDictionary(ViewData)
+                            {
+                            { "ShowCountdown", true },
+                            { "BadgeColor", "primary" }
+                            })
+            </div>
+        </div>
+    </div>
+        
+    }
+
+    @if (Model.PastActivities.Any())
+    {
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                Past Activities
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#activitiesAccordion">
+            <div class="accordion-body">
+                    @await Html.PartialAsync("_ActivityList", Model.PastActivities,
+                    new ViewDataDictionary(ViewData)
+                                {
+                                { "ShowCountdown", true },
+                                { "BadgeColor", "danger" }
+                                })
+            </div>
+        </div>
+    </div>
+
+    }
+
+</div>
