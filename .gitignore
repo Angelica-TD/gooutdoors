@@ -90,3 +90,7 @@ artifacts/
 wwwroot/lib/
 wwwroot/dist/
 dist/
+
+# Sensitive settings
+appsettings.json
+appsettings.*.json
