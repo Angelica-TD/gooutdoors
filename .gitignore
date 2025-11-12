@@ -94,3 +94,8 @@ dist/
 # Sensitive settings
 appsettings.json
 appsettings.*.json
+Migrations/
+Data/
+obj/
+bin/
+docs/
