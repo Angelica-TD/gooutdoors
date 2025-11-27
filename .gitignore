@@ -99,3 +99,9 @@ Data/
 obj/
 bin/
 docs/
+
+Dockerfile
+docker-compose.yml
+wait-for-postgres.sh
+
+wwwroot/uploads/

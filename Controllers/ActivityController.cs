@@ -28,9 +28,10 @@ namespace Outdoors.ly.Controllers
                 .Take(3)
                 .ToList();
 
+            DateTime cutoff = TodayDate.AddDays(-30);
+
             List<Activity> past = _db.Activities
-                .Where(a => a.StartDate.Date < TodayDate)
-                //.OrderBy(a => a.StartDate)
+                .Where(a => a.StartDate >= cutoff && a.StartDate < TodayDate)
                 .OrderByDescending(a => a.StartDate)
                 .Take(3)
                 .ToList();
